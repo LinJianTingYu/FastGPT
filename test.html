@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var compose = function (functions) {
+      // function total(functions_1, argNum) {
+      //   const res = functions_1.slice(-1)[0](argNum)
+      //   console.log(res)
+      //   if (functions_1.length > 1) {
+      //     return total(functions_1.slice(0, -1), res)
+      //   }
+      //   if (functions_1.length === 1) {
+      //     return res
+      //   }
+      // }
+      return function (x) {
+        return functions.reduce((acc, fn) => {
+          return fn(acc || x)
+        }, null);
+      }
+    };
+
+     const fn = compose([x => x + 1, x => 2 * x])
+     console.log(fn(4))
+      // 9
+  </script>
+</body>
+
+</html>

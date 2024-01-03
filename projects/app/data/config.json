@@ -43,6 +43,18 @@
       "defaultSystemChatPrompt": ""
     },
     {
+      "model": "gpt-4-1106-preview",
+      "name": "gpt-4-1106",
+      "maxContext": 128000,
+      "maxResponse": 4000,
+      "price": 0,
+      "quoteMaxToken": 100000,
+      "maxTemperature": 1.2,
+      "censor": false,
+      "vision": false,
+      "defaultSystemChatPrompt": ""
+    },
+    {
       "model": "gpt-4-vision-preview",
       "name": "GPT4-Vision",
       "maxContext": 128000,
@@ -53,6 +65,26 @@
       "censor": false,
       "vision": true,
       "defaultSystemChatPrompt": ""
+    },
+    {
+      "model": "claude-2",
+      "name": "claude-2",
+      "maxToken": 100000,
+      "price": 0,
+      "quoteMaxToken": 60000,
+      "maxTemperature": 1.2,
+      "censor": false,
+      "defaultSystemChatPrompt": ""
+    },
+    {
+      "model": "claude-instant-1",
+      "name": "claude-instant-1",
+      "maxToken": 100000,
+      "price": 0,
+      "quoteMaxToken": 60000,
+      "maxTemperature": 1.2,
+      "censor": false,
+      "defaultSystemChatPrompt": ""
     }
   ],
   "qaModels": [
@@ -61,6 +93,13 @@
       "name": "GPT35-16k",
       "maxContext": 16000,
       "maxResponse": 16000,
+      "price": 0
+    },
+    {
+      "model": "gpt-4-1106-preview",
+      "name": "gpt-4-1106",
+      "maxContext": 128000,
+      "maxResponse": 4000,
       "price": 0
     }
   ],
@@ -82,9 +121,27 @@
       "price": 0,
       "toolChoice": true,
       "functionPrompt": ""
+    },
+    {
+      "model": "gpt-4-1106-preview",
+      "name": "gpt-4-1106",
+      "maxContext": 128000,
+      "maxResponse": 40000,
+      "price": 0,
+      "functionCall": true,
+      "functionPrompt": ""
     }
   ],
   "extractModels": [
+    {
+      "model": "gpt-4-1106-preview",
+      "name": "gpt-4-1106",
+      "maxContext": 128000,
+      "maxResponse": 40000,
+      "price": 0,
+      "functionCall": true,
+      "functionPrompt": ""
+    },
     {
       "model": "gpt-3.5-turbo-1106",
       "name": "GPT35-1106",
@@ -96,6 +153,15 @@
     }
   ],
   "qgModels": [
+    {
+      "model": "gpt-4-1106-preview",
+      "name": "gpt-4-1106",
+      "maxContext": 128000,
+      "maxResponse": 40000,
+      "price": 0,
+      "functionCall": true,
+      "functionPrompt": ""
+    },
     {
       "model": "gpt-3.5-turbo-1106",
       "name": "GPT35-1106",

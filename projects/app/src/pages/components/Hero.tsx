@@ -21,7 +21,7 @@ const Hero = () => {
         {t('home.desc')}
       </Box>
       <Flex zIndex={1} flexDirection={['column', 'row']} mt={[5, 8]}>
-        {feConfigs?.show_git && (
+        {/* {feConfigs?.show_git && (
           <Button
             mr={[0, 5]}
             mb={[5, 0]}
@@ -42,7 +42,7 @@ const Hero = () => {
           >
             Stars {(gitStar / 1000).toFixed(1)}k
           </Button>
-        )}
+        )} */}
         <Button
           fontSize={['xl', '2xl']}
           h={['38px', 'auto']}
