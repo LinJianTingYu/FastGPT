@@ -68,7 +68,6 @@ export async function dispatchDatasetSearch(
     inputLen: tokens,
     type: ModelTypeEnum.vector
   });
-
   return {
     isEmpty: searchRes.length === 0 ? true : undefined,
     unEmpty: searchRes.length > 0 ? true : undefined,

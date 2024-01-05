@@ -155,7 +155,7 @@ const LoginForm = ({ setPageType, loginSuccess }: Props) => {
             })}
           ></Input>
         </FormControl>
-        {feConfigs?.docUrl && (
+        {/* {feConfigs?.docUrl && (
           <Box mt={7} fontSize={'sm'}>
             使用即代表你同意我们的{' '}
             <Link
@@ -166,7 +166,7 @@ const LoginForm = ({ setPageType, loginSuccess }: Props) => {
               免责声明
             </Link>
           </Box>
-        )}
+        )} */}
 
         <Button
           type="submit"

@@ -76,7 +76,7 @@ const Login = () => {
         <Flex
           flexDirection={'column'}
           w={['100%', 'auto']}
-          h={['100%', '700px']}
+          h={['100%', '500px']}
           maxH={'90vh'}
           bg={'white'}
           px={['5vw', '88px']}

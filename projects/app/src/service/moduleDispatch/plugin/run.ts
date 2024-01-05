@@ -72,7 +72,6 @@ export const dispatchRunPlugin = async (props: RunPluginProps): Promise<RunPlugi
   if (output) {
     output.moduleLogo = plugin.avatar;
   }
-  console.log(responseData.length);
 
   return {
     answerText,

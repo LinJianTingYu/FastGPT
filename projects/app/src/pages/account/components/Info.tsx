@@ -187,12 +187,12 @@ const UserInfo = () => {
           <Box flex={'0 0 80px'}>{t('user.Account')}:&nbsp;</Box>
           <Box flex={1}>{userInfo?.username}</Box>
         </Flex>
-        <Flex mt={6} alignItems={'center'} w={['85%', '300px']}>
+        {/* <Flex mt={6} alignItems={'center'} w={['85%', '300px']}>
           <Box flex={'0 0 80px'}>{t('user.Team')}:&nbsp;</Box>
           <Box flex={1}>
             <TeamMenu />
           </Box>
-        </Flex>
+        </Flex> */}
         <Flex mt={6} alignItems={'center'} w={['85%', '300px']}>
           <Box flex={'0 0 80px'}>{t('user.Language')}:&nbsp;</Box>
           <Box flex={'1 0 0'}>

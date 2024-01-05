@@ -11,7 +11,6 @@ export type PluginOutputResponse = {
 
 export const dispatchPluginOutput = (props: PluginOutputProps): PluginOutputResponse => {
   const { inputs } = props;
-
   return {
     responseData: {
       price: 0,

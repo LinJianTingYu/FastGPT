@@ -46,6 +46,8 @@ const callbackMap: Record<`${FlowNodeTypeEnum}`, Function> = {
   [FlowNodeTypeEnum.variable]: () => Promise.resolve()
 };
 
+// console.log('callbackMap', callbackMap)
+
 /* running */
 export async function dispatchModules({
   res,
