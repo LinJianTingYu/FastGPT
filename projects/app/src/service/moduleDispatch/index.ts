@@ -183,7 +183,7 @@ export async function dispatchModules({
       });
     }
 
-    // get fetch params
+    // get module running params
     const params: Record<string, any> = {};
     module.inputs.forEach((item: any) => {
       params[item.key] = item.value;
@@ -200,6 +200,7 @@ export async function dispatchModules({
       inputs: params
     };
 
+    // run module
     const dispatchRes: Record<string, any> = await (async () => {
       if (callbackMap[module.flowType]) {
         return callbackMap[module.flowType](dispatchData);
@@ -207,10 +208,13 @@ export async function dispatchModules({
       return {};
     })();
 
+    // format response data. Add modulename and moduletype
     const formatResponseData = (() => {
       if (!dispatchRes[ModuleOutputKeyEnum.responseData]) return undefined;
-      if (Array.isArray(dispatchRes[ModuleOutputKeyEnum.responseData]))
+      if (Array.isArray(dispatchRes[ModuleOutputKeyEnum.responseData])) {
         return dispatchRes[ModuleOutputKeyEnum.responseData];
+      }
+
       return {
         moduleName: module.name,
         moduleType: module.flowType,
@@ -218,8 +222,16 @@ export async function dispatchModules({
       };
     })();
 
+    // Pass userChatInput
+    const hasUserChatInputTarget = !!module.outputs.find(
+      (item) => item.key === ModuleOutputKeyEnum.userChatInput
+    )?.targets?.length;
+
     return moduleOutput(module, {
       [ModuleOutputKeyEnum.finish]: true,
+      [ModuleOutputKeyEnum.userChatInput]: hasUserChatInputTarget
+        ? params[ModuleOutputKeyEnum.userChatInput]
+        : undefined,
       ...dispatchRes,
       [ModuleOutputKeyEnum.responseData]: formatResponseData
     });

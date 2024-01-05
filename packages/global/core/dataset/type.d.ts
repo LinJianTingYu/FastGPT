@@ -49,7 +49,10 @@ export type DatasetCollectionSchemaType = {
   qaPrompt?: string;
   rawTextLength?: number;
   hashRawText?: string;
-  metadata?: Record<string, any>;
+  metadata?: {
+    webPageSelector?: string;
+    [key: string]: any;
+  };
 };
 
 export type DatasetDataIndexItemType = {
@@ -162,7 +165,10 @@ export type DatasetFileSchema = {
 };
 
 /* ============= search =============== */
-export type SearchDataResponseItemType = Omit<DatasetDataItemType, 'isOwner' | 'canWrite'> & {
+export type SearchDataResponseItemType = Omit<
+  DatasetDataItemType,
+  'indexes' | 'isOwner' | 'canWrite'
+> & {
   score: { type: `${SearchScoreTypeEnum}`; value: number; index: number }[];
   // score: number;
 };

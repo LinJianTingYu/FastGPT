@@ -7,23 +7,48 @@ draft: false
 images: []
 ---
 
+## 错误排查方式
+
+遇到问题先按下面方式排查。
+
+1. `docker ps -a` 查看所有容器运行状态，检查是否全部 running，如有异常，尝试`docker logs 容器名`查看对应日志。
+2. 不懂 docker 不要瞎改端口，只需要改`OPENAI_BASE_URL`和`CHAT_API_KEY`即可。
+3. 容器都运行正常的，`docker logs 容器名` 查看报错日志
+4. 无法解决时，可以找找[Issue](https://github.com/labring/FastGPT/issues)，或新提 Issue，私有部署错误，务必提供详细的日志，否则很难排查。
+
+
 ## 通用问题
 
 ### insufficient_user_quota user quota is not enough 
 
 OneAPI 账号的余额不足，默认 root 用户只有 200 刀，可以手动修改。
 
+### xxx渠道找不到
+
+OneAPI 中没有配置该模型渠道。
+
+### 页面中可以正常回复，API 报错
+
+页面中是用 stream=true 模式，所以API也需要设置 stream=true 来进行测试。部分模型接口（国产居多）非 Stream 的兼容有点垃圾。
+
+### Incorrect API key provided: sk-xxxx.You can find your api Key at xxx
+
+OneAPI 的 API Key 配置错误，需要修改`OPENAI_API_KEY`环境变量，并重启容器（先 stop 然后 rm 掉，最后再 up -d 运行一次）。可以`exec`进入容器，`env`查看环境变量是否生效。
 
 ## Docker 部署常见问题
 
 ### 如何更新？
 
-执行下面命令会自动拉取最新镜像，一般情况下不需要执行额外操作。
+1. 查看[更新文档](/docs/development/upgrading/intro/)，确认要升级的版本，避免跨版本升级。
+2. 修改镜像 tag 到指定版本
+3. 执行下面命令会自动拉取镜像：
 
-```bash
-docker-compose pull
-docker-compose up -d
-```
+    ```bash
+    docker-compose pull
+    docker-compose up -d
+    ```
+
+4. 执行初始化脚本（如果有）
 
 ### 如何自定义配置文件？
 
@@ -67,10 +92,14 @@ mongo连接失败，检查
 1. mongo 服务有没有起来(有些 cpu 不支持 AVX，无法用 mongo5，需要换成 mongo4.x，可以dockerhub找个最新的4.x，修改镜像版本，重新运行）
 2. 环境变量（账号密码，注意host和port）
 
+## 本地开发问题
 
-### 错误排查方式
+### TypeError: Cannot read properties of null (reading 'useMemo' )
 
-遇到问题先按下面方式排查。
+用 Node18 试试，可能最新的 Node 有问题。 本地开发流程：
 
-1. `docker ps -a` 查看所有容器运行状态，检查是否全部 running，如有异常，尝试`docker logs 容器名`查看对应日志。
-2. 不懂 docker 不要瞎改端口，只需要改`OPENAI_BASE_URL`和`CHAT_API_KEY`即可。
+1. 根目录: `pnpm i`
+2. 复制 `config.json` -> `config.local.json`
+3. 复制 `.env.template` -> `.env.local`
+4. `cd projects/app`
+5. `pnpm dev`
