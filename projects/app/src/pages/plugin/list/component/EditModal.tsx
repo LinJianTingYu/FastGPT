@@ -23,7 +23,7 @@ export type FormType = CreateOnePluginParams & {
   id?: string;
 };
 export const defaultForm: FormType = {
-  avatar: '/icon/logo.svg',
+  avatar: '/icon/logo.png',
   name: '',
   intro: '',
   modules: [

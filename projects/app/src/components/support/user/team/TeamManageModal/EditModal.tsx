@@ -19,7 +19,7 @@ export type FormDataType = CreateTeamProps & {
 
 export const defaultForm = {
   name: '',
-  avatar: '/icon/logo.svg'
+  avatar: '/icon/logo.png'
 };
 
 function EditModal({

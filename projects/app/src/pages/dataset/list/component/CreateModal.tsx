@@ -30,7 +30,7 @@ const CreateModal = ({ onClose, parentId }: { onClose: () => void; parentId?: st
     defaultValues: {
       parentId,
       type: DatasetTypeEnum.dataset,
-      avatar: '/icon/logo.svg',
+      avatar: '/icon/logo.png',
       name: '',
       intro: '',
       vectorModel: vectorModelList[0].model,

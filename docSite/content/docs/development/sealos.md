@@ -131,7 +131,7 @@ SYSTEM_FAVICON 可以是一个网络地址
 
 ### 挂载logo
 目前暂时无法 把浏览器上的logo替换。仅支持svg，待后续可视化做了后可以全部替换。
-新增一个挂载文件，文件名为：/app/projects/app/public/icon/logo.svg ，值为 svg 对应的值。
+新增一个挂载文件，文件名为：/app/projects/app/public/icon/logo.png ，值为 svg 对应的值。
 
 ![](/imgs/onsealos7.png)
 ![](/imgs/onsealos8.png)

@@ -7,7 +7,7 @@ export const defaultApp: AppDetailType = {
   name: '应用加载中',
   type: 'simple',
   simpleTemplateId: 'fastgpt-universal',
-  avatar: '/icon/logo.svg',
+  avatar: '/icon/logo.png',
   intro: '',
   updateTime: Date.now(),
   modules: [],
