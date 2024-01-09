@@ -97,14 +97,14 @@
       "name": "GPT35-16k",
       "maxContext": 16000,
       "maxResponse": 16000,
-      "price": 0
+      "inputPrice": 0,
+      "outputPrice": 0
     },
     {
       "model": "gpt-4-1106-preview",
       "name": "gpt-4-1106",
       "maxContext": 128000,
       "maxResponse": 4000,
-      "price": 0,
       "inputPrice": 0,
       "outputPrice": 0
     }
