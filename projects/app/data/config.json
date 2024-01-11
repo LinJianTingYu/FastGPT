@@ -69,27 +69,27 @@
       "censor": false,
       "vision": true,
       "defaultSystemChatPrompt": ""
-    },
-    {
-      "model": "claude-2",
-      "name": "claude-2",
-      "maxToken": 100000,
-      "price": 0,
-      "quoteMaxToken": 60000,
-      "maxTemperature": 1.2,
-      "censor": false,
-      "defaultSystemChatPrompt": ""
-    },
-    {
-      "model": "claude-instant-1",
-      "name": "claude-instant-1",
-      "maxToken": 100000,
-      "price": 0,
-      "quoteMaxToken": 60000,
-      "maxTemperature": 1.2,
-      "censor": false,
-      "defaultSystemChatPrompt": ""
     }
+    // {
+    //   "model": "claude-2",
+    //   "name": "claude-2",
+    //   "maxToken": 100000,
+    //   "price": 0,
+    //   "quoteMaxToken": 60000,
+    //   "maxTemperature": 1.2,
+    //   "censor": false,
+    //   "defaultSystemChatPrompt": ""
+    // },
+    // {
+    //   "model": "claude-instant-1",
+    //   "name": "claude-instant-1",
+    //   "maxToken": 100000,
+    //   "price": 0,
+    //   "quoteMaxToken": 60000,
+    //   "maxTemperature": 1.2,
+    //   "censor": false,
+    //   "defaultSystemChatPrompt": ""
+    // }
   ],
   "qaModels": [
     {
