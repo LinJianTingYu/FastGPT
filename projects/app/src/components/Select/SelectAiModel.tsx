@@ -8,14 +8,16 @@ const PriceBox = dynamic(() => import('@/components/support/wallet/Price'));
 
 const SelectAiModel = ({ list, ...props }: SelectProps) => {
   const { t } = useTranslation();
-  const expandList = useMemo(
-    () =>
-      list.concat({
-        label: t('support.user.Price'),
-        value: 'price'
-      }),
-    [list, t]
-  );
+  const expandList = list;
+  // 不显示计费标准
+  // useMemo(
+  //   () =>
+  //     list.concat({
+  //       label: t('support.user.Price'),
+  //       value: 'price'
+  //     }),
+  //   [list, t]
+  // );
 
   const {
     isOpen: isOpenPriceBox,
