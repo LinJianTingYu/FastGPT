@@ -130,12 +130,12 @@ const ResponseBox = React.memo(function ResponseBox({
       </Box>
       <Box py={2} px={4} flex={'1 0 0'} overflow={'auto'}>
         <Row label={t('core.chat.response.module name')} value={t(activeModule.moduleName)} />
-        {activeModule?.price !== undefined && (
+        {/* {activeModule?.price !== undefined && (
           <Row
             label={t('core.chat.response.module price')}
             value={`￥${formatStorePrice2Read(activeModule?.price)}`}
           />
-        )}
+        )} */}
         <Row
           label={t('core.chat.response.module time')}
           value={`${activeModule?.runningTime || 0}s`}
